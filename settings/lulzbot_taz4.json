@@ -1,0 +1,45 @@
+{
+    "id": "lulzbot_taz4",
+    "version": 1,
+    "name": "TAZ4 Hexagon",
+    "manufacturer": "Lulzbot",
+    "icon": "icon_ultimaker2.png",
+    "platform": "ultimaker2_platform.obj",
+
+    "inherits": "fdmprinter.json",
+
+    "machine_settings": {
+        "machine_start_gcode": {
+            "default": "M203 X150 Y150 Z7\nG28\nG1 Y10 X10 Z0 F15000\nG92 E0"
+        },
+        "machine_end_gcode": {
+            "default": "M104 S0\nM140 S0\nM107\nG28 X0 Y0\nG1 Y250\nM84"
+        },
+        "machine_width": { "default": 290 },
+        "machine_depth": { "default": 275 },
+        "machine_height": { "default": 250 },
+
+        "machine_nozzle_size": { "default": 0.4 },
+        "machine_gcode_flavor": { "default": "RepRap" }
+    },
+
+    "categories": {
+        "resolution": {
+            "label": "Nozzle Size/Quality",
+            "visible": true,
+            "icon": "category_quality",
+            "settings": {
+                "machine_nozzle_size": {
+                    "label": "Nozzle Diameter",
+                    "description": "Nozzle Diameter in mm",
+                    "unit": "mm",
+                    "type": "float",
+                    "default": 0.4,
+                    "min_value": 0.0,
+                    "min_value_warning": 0.1,
+                    "max_value_warning": 1.2
+                }
+            }
+        }
+    }
+}
